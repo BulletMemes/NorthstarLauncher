@@ -226,7 +226,7 @@ void MasterServerManager::AuthenticateOriginWithMasterServer(char* uid, char* or
 				CURLOPT_URL,
 				fmt::format("{}/client/origin_auth?id={}&token={}", Cvar_ns_masterserver_hostname->GetString(), uidStr, tokenStr).c_str());
 			curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "GET");
-			curl_easy_setopt (curl, CURLOPT_VERBOSE, 0L)
+			curl_easy_setopt (curl, CURLOPT_VERBOSE, 0L);
 			curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, CurlWriteToStringBufferCallback);
 			curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
 
